@@ -1,0 +1,127 @@
+/* === Font & Dasar === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #1d2b64, #f8cdda, #232526, #414345);
+    background-size: 400% 400%;
+    animation: gradientBG 18s ease-in-out infinite;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* === Animasi === */
+@keyframes gradientBG {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes twinkle {
+    from { opacity: 0.4; }
+    to   { opacity: 1; }
+}
+
+/* === Background Bintang === */
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+/* === Glass Card === */
+.glass-card {
+    background: rgba(30, 30, 40, 0.85);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    padding: 48px;
+    max-width: 600px;
+    margin: 60px auto;
+    box-shadow: 0 8px 32px rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.18);
+    animation: fadeInUp 1.5s ease-out;
+    z-index: 1;
+}
+
+/* === Judul & Teks === */
+.glass-card h2, .glass-card h3 {
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #fff;
+}
+
+.glass-card p {
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* === Tabel & Tombol Admin === */
+.table {
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #1d2b64, #f8cdda);
+    border: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #f8cdda, #1d2b64);
+}
+
+/* === Badges & Alert === */
+.badge.bg-secondary {
+    background-color: #aaa !important;
+    color: #fff;
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid #28a745;
+    color: #fff;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .glass-card {
+        padding: 24px;
+    }
+}
